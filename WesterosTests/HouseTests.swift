@@ -23,9 +23,11 @@ class HouseTests: XCTestCase {
     var arya: Person!
     var tyrion: Person!
     
+    var groupHouses: Set<House>!
+    var arrayHouses: Array<House>!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         
         starkImage = #imageLiteral(resourceName: "codeIsComing.png")
         lannisterImage = #imageLiteral(resourceName: "lannister.jpg")
@@ -39,10 +41,12 @@ class HouseTests: XCTestCase {
         robb = Person(name: "Robb", alias: "The young wolf", house: starkHouse)
         arya = Person(name: "Arya", house: starkHouse)
         tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
+        
+        groupHouses = Set.init()
+        arrayHouses = Array.init()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
@@ -72,6 +76,44 @@ class HouseTests: XCTestCase {
         
         starkHouse.add(person: tyrion)
         XCTAssertEqual(starkHouse.count, 2)
+    }
+    
+    func testEqualHouses() {
+        XCTAssertEqual(starkHouse, starkHouse)
+        
+        XCTAssertNotEqual(starkHouse, lannisterHouse)
+    }
+    
+    func testCompareHouses() {
+        XCTAssertLessThan(lannisterHouse, starkHouse)
+        
+        XCTAssertGreaterThan(starkHouse, lannisterHouse)
+    }
+    
+    func testAddHouseToSet() {
+        XCTAssertEqual(groupHouses.count, 0)
+        groupHouses.insert(starkHouse)
+        
+        XCTAssertEqual(groupHouses.count, 1)
+        groupHouses.insert(lannisterHouse)
+        
+        XCTAssertEqual(groupHouses.count, 2)
+        groupHouses.insert(starkHouse)
+        
+        XCTAssertEqual(groupHouses.count, 2)
+    }
+    
+    func testAddHouseToArray() {
+        XCTAssertEqual(arrayHouses.count, 0)
+        arrayHouses.append(starkHouse)
+        
+        XCTAssertEqual(arrayHouses.count, 1)
+        arrayHouses.append(lannisterHouse)
+        
+        XCTAssertEqual(arrayHouses.count, 2)
+        arrayHouses.append(starkHouse)
+        
+        XCTAssertEqual(arrayHouses.count, 3)
     }
     
 }

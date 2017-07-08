@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Person
 final class Person {
     let name: String
     let house: House
@@ -19,7 +20,6 @@ final class Person {
         }
     }
     
-    // init(name: String, alias: String? = nil, house: House) {
     init(name: String, alias: String?, house: House) {
         self.name = name
         _alias = alias
@@ -31,17 +31,18 @@ final class Person {
     }
 }
 
-extension Person {
-    var proxy: String {
-        return "\(name) \(alias) \(house.name)"
-    }
-}
-
+// MARK: - extension Person
 extension Person {
     var fullName: String {
         get {
             return "\(name) \(house.name)"
         }
+    }
+}
+
+extension Person {
+    var proxy: String {
+        return "\(name) \(alias) \(house.name)"
     }
 }
 
@@ -61,6 +62,6 @@ extension Person: Equatable {
 
 extension Person: Comparable {
     static func <(lhs: Person, rhs: Person) -> Bool {
-        return lhs.hashValue < rhs.hashValue
+        return lhs.proxy < rhs.proxy
     }
 }

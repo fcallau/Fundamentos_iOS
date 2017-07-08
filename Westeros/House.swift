@@ -28,6 +28,7 @@ final class House {
     }
 }
 
+// MARK: - Sigil
 final class Sigil {
     
     let description: String
@@ -38,25 +39,26 @@ final class Sigil {
     }
 }
 
-extension House {
-    var proxy: String {
-        get {
-            return "\(name) \(sigil.description) \(words)"
-        }
-    }
-}
-
+// MARK: - extension House
 extension House {
     var count: Int {
         return _members.count
     }
     
     func add(person: Person) {
-        //guard person.house == self else { // Intentar implementar Equatable
-        guard person.house.name == name else {
+        guard person.house == self else { // Intentar implementar Equatable
+        // guard person.house.name == name else {
             return
         }
         _members.insert(person)
+    }
+}
+
+extension House {
+    var proxy: String {
+        get {
+            return "\(name) \(sigil.description) \(words)"
+        }
     }
 }
 
@@ -70,13 +72,13 @@ extension House: Hashable {
 
 extension House: Equatable {
     static func ==(lhs: House, rhs: House) -> Bool {
-        return lhs.hashValue == rhs.hashValue
+        return lhs.proxy == rhs.proxy
     }
 }
 
 
 extension House: Comparable {
     static func <(lhs: House, rhs: House) -> Bool {
-        return lhs.hashValue < rhs.hashValue
+        return lhs.proxy < rhs.proxy
     }
 }
