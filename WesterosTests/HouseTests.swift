@@ -35,8 +35,8 @@ class HouseTests: XCTestCase {
         starkSigil = Sigil(image: starkImage, description: "Direwolf")
         lannisterSigil = Sigil(image: lannisterImage, description: "Rampant Lion")
         
-        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
-        lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
+        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!", nameIcon: "iconCodeIsComing.png")
+        lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!", nameIcon: "iconLannister.png")
         
         robb = Person(name: "Robb", alias: "The young wolf", house: starkHouse)
         arya = Person(name: "Arya", house: starkHouse)
@@ -52,7 +52,7 @@ class HouseTests: XCTestCase {
     
     func testHouseExistence() {
         let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
-        let stark = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
+        let stark = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!", nameIcon: "iconCodeIsComing.png")
         
         XCTAssertNotNil(stark)
     }

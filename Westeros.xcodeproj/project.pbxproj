@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F53492B1F141292007313AA /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5349291F141292007313AA /* HouseViewController.swift */; };
+		0F53492C1F141292007313AA /* HouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F53492A1F141292007313AA /* HouseViewController.xib */; };
+		0F5349301F143647007313AA /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5349291F141292007313AA /* HouseViewController.swift */; };
+		0F56C0FF1F14FE63000D27FE /* iconCodeIsComing.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F56C0FE1F14FE63000D27FE /* iconCodeIsComing.png */; };
+		0F56C1011F14FF37000D27FE /* iconLannister.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F56C1001F14FF37000D27FE /* iconLannister.png */; };
 		0F656D5E1F0C483000CCD549 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F656D5D1F0C483000CCD549 /* AppDelegate.swift */; };
 		0F656D651F0C483000CCD549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F656D641F0C483000CCD549 /* Assets.xcassets */; };
 		0F656D681F0C483000CCD549 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F656D661F0C483000CCD549 /* LaunchScreen.storyboard */; };
+		0FB4B92C1F1437680056E607 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFC5E51F0EC23C0021F48D /* House.swift */; };
+		0FB4B9471F1438B60056E607 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4B9461F1438B60056E607 /* Person.swift */; };
+		0FB4B9481F1438F00056E607 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4B9461F1438B60056E607 /* Person.swift */; };
 		0FC3EDAF1F0ECAA9007BA45A /* PersonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC3EDAE1F0ECAA9007BA45A /* PersonTest.swift */; };
-		0FC3EDB11F0ECD89007BA45A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC3EDB01F0ECD89007BA45A /* Person.swift */; };
 		0FFFC5E41F0EC0F90021F48D /* HouseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFC5E31F0EC0F90021F48D /* HouseTests.swift */; };
 		0FFFC5E61F0EC23C0021F48D /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFC5E51F0EC23C0021F48D /* House.swift */; };
 		0FFFC5EA1F0EC8750021F48D /* lannister.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FFFC5E81F0EC8750021F48D /* lannister.jpg */; };
@@ -29,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F5349291F141292007313AA /* HouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
+		0F53492A1F141292007313AA /* HouseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HouseViewController.xib; sourceTree = "<group>"; };
+		0F56C0FE1F14FE63000D27FE /* iconCodeIsComing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconCodeIsComing.png; sourceTree = "<group>"; };
+		0F56C1001F14FF37000D27FE /* iconLannister.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconLannister.png; sourceTree = "<group>"; };
 		0F656D5A1F0C483000CCD549 /* Westeros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Westeros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F656D5D1F0C483000CCD549 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F656D641F0C483000CCD549 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,8 +47,8 @@
 		0F656D691F0C483000CCD549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F656D6E1F0C483000CCD549 /* WesterosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WesterosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F656D741F0C483000CCD549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FB4B9461F1438B60056E607 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		0FC3EDAE1F0ECAA9007BA45A /* PersonTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTest.swift; sourceTree = "<group>"; };
-		0FC3EDB01F0ECD89007BA45A /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		0FFFC5E31F0EC0F90021F48D /* HouseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseTests.swift; sourceTree = "<group>"; };
 		0FFFC5E51F0EC23C0021F48D /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		0FFFC5E81F0EC8750021F48D /* lannister.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lannister.jpg; sourceTree = "<group>"; };
@@ -62,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F53492D1F141299007313AA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F5349291F141292007313AA /* HouseViewController.swift */,
+				0F53492A1F141292007313AA /* HouseViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		0F656D511F0C483000CCD549 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				0FFFC5EC1F0EC87D0021F48D /* Resources */,
+				0F53492D1F141299007313AA /* Controllers */,
 				0FFFC5E71F0EC2460021F48D /* Models */,
 				0F656D5D1F0C483000CCD549 /* AppDelegate.swift */,
 				0F656D641F0C483000CCD549 /* Assets.xcassets */,
@@ -107,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				0FFFC5E51F0EC23C0021F48D /* House.swift */,
-				0FC3EDB01F0ECD89007BA45A /* Person.swift */,
+				0FB4B9461F1438B60056E607 /* Person.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -115,6 +136,8 @@
 		0FFFC5EC1F0EC87D0021F48D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0F56C0FE1F14FE63000D27FE /* iconCodeIsComing.png */,
+				0F56C1001F14FF37000D27FE /* iconLannister.png */,
 				0FFFC5E81F0EC8750021F48D /* lannister.jpg */,
 				0FFFC5E91F0EC8750021F48D /* codeIsComing.png */,
 			);
@@ -209,8 +232,11 @@
 			files = (
 				0FFFC5EA1F0EC8750021F48D /* lannister.jpg in Resources */,
 				0F656D681F0C483000CCD549 /* LaunchScreen.storyboard in Resources */,
+				0F53492C1F141292007313AA /* HouseViewController.xib in Resources */,
 				0F656D651F0C483000CCD549 /* Assets.xcassets in Resources */,
 				0FFFC5EB1F0EC8750021F48D /* codeIsComing.png in Resources */,
+				0F56C1011F14FF37000D27FE /* iconLannister.png in Resources */,
+				0F56C0FF1F14FE63000D27FE /* iconCodeIsComing.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,9 +254,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FC3EDB11F0ECD89007BA45A /* Person.swift in Sources */,
+				0FB4B9471F1438B60056E607 /* Person.swift in Sources */,
 				0FFFC5E61F0EC23C0021F48D /* House.swift in Sources */,
 				0F656D5E1F0C483000CCD549 /* AppDelegate.swift in Sources */,
+				0F53492B1F141292007313AA /* HouseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,8 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FB4B9481F1438F00056E607 /* Person.swift in Sources */,
 				0FFFC5E41F0EC0F90021F48D /* HouseTests.swift in Sources */,
 				0FC3EDAF1F0ECAA9007BA45A /* PersonTest.swift in Sources */,
+				0FB4B92C1F1437680056E607 /* House.swift in Sources */,
+				0F5349301F143647007313AA /* HouseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,6 @@ import XCTest
 @testable import Westeros
 
 class PersonTest: XCTestCase {
-    
     var starkHouse: House!
     var starkSigil: Sigil!
     var ned: Person!
@@ -23,7 +22,7 @@ class PersonTest: XCTestCase {
         super.setUp()
         
         starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
-        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
+        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!", nameIcon: "iconCodeIsComing.png")
         
         ned = Person(name: "Eddard", alias: "Ned", house: starkHouse)
         me = Person(name: "Franc", alias: "fcallau", house: starkHouse)
@@ -41,12 +40,13 @@ class PersonTest: XCTestCase {
     }
     
     func testFullName() {
-        XCTAssertNotNil(ned.fullName, "Eddard Stark")
+        XCTAssertNotNil(ned.fullName)
         XCTAssertEqual(ned.fullName, "Eddard Stark")
     }
     
     func testEqualPersons() {
         XCTAssertEqual(ned, ned)
+        
         XCTAssertNotEqual(ned, me)
     }
     

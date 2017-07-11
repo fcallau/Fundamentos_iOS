@@ -16,21 +16,20 @@ typealias Members = Set<Person>
 
 // MARK: - House
 final class House {
-    
     let name: String
     let sigil: Sigil
     let words: Words
+    let nameIcon: String
     private var _members: Members
     
-    init(name: String, sigil: Sigil, words: Words) {
-        (self.name, self.sigil, self.words) = (name, sigil, words)
+    init(name: String, sigil: Sigil, words: Words, nameIcon: String) {
+        (self.name, self.sigil, self.words, self.nameIcon) = (name, sigil, words, nameIcon)
         _members = Members()
     }
 }
 
 // MARK: - Sigil
 final class Sigil {
-    
     let description: String
     let image: UIImage
     
@@ -55,9 +54,15 @@ extension House {
 }
 
 extension House {
-    var proxy: String {
+    var proxyForEquality: String {
         get {
-            return "\(name) \(sigil.description) \(words)"
+            return "\(name) \(words) \(count)"
+        }
+    }
+    
+    var proxyForComparison: String {
+        get {
+            return name.uppercased()
         }
     }
 }
@@ -65,20 +70,20 @@ extension House {
 extension House: Hashable {
     var hashValue: Int {
         get {
-            return proxy.hashValue
+            return proxyForEquality.hashValue
         }
     }
 }
 
 extension House: Equatable {
     static func ==(lhs: House, rhs: House) -> Bool {
-        return lhs.proxy == rhs.proxy
+        return lhs.proxyForEquality == rhs.proxyForEquality
     }
 }
 
 
 extension House: Comparable {
     static func <(lhs: House, rhs: House) -> Bool {
-        return lhs.proxy < rhs.proxy
+        return lhs.proxyForComparison < rhs.proxyForComparison
     }
 }
