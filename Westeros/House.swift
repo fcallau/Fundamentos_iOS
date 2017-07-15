@@ -19,11 +19,10 @@ final class House {
     let name: String
     let sigil: Sigil
     let words: Words
-    let nameIcon: String
     private var _members: Members
     
-    init(name: String, sigil: Sigil, words: Words, nameIcon: String) {
-        (self.name, self.sigil, self.words, self.nameIcon) = (name, sigil, words, nameIcon)
+    init(name: String, sigil: Sigil, words: Words) {
+        (self.name, self.sigil, self.words) = (name, sigil, words)
         _members = Members()
     }
 }

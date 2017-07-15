@@ -21,7 +21,7 @@ class HouseViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         
-        self.tabBarItem = UITabBarItem(title: model.name, image: UIImage(named: model.nameIcon), selectedImage: nil)
+        self.title = model.name
     }
     
     // Chapuza de los de Cupertino (relacionada con los nil)

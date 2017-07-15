@@ -22,7 +22,7 @@ class PersonTest: XCTestCase {
         super.setUp()
         
         starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
-        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!", nameIcon: "iconCodeIsComing.png")
+        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
         
         ned = Person(name: "Eddard", alias: "Ned", house: starkHouse)
         me = Person(name: "Franc", alias: "fcallau", house: starkHouse)
