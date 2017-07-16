@@ -28,7 +28,7 @@ class RepositoryTests: XCTestCase {
         let houses = Repository.local.houses
         
         XCTAssertNotNil(houses)
-        XCTAssertEqual(houses.count, 2)
+        XCTAssertEqual(houses.count, 3)
     }
     
     func testOrderedHousesArray() {
@@ -45,5 +45,18 @@ class RepositoryTests: XCTestCase {
     func testGetHouse() {
         XCTAssertNotNil(Repository.local.house(named: "Stark"))
         XCTAssertNil(Repository.local.house(named: "Unknown"))
+    }
+    
+    func testFilteredBy() {
+        func moreThan2PersonsInHouse(_ house: House) -> Bool {
+            return (house.count > 2 ? true : false)
+        }
+        
+        func lessThan3PersonsInHouse(_ house: House) -> Bool {
+            return (house.count < 3 ? true : false)
+        }
+        
+        XCTAssertEqual(Repository.local.houses(filteredBy: moreThan2PersonsInHouse).count, 1)
+        XCTAssertEqual(Repository.local.houses(filteredBy: lessThan3PersonsInHouse).count, 2)
     }
 }

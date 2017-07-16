@@ -11,9 +11,9 @@ import XCTest
 
 class PersonTest: XCTestCase {
     var starkHouse: House!
-    var starkSigil: Sigil!
-    var ned: Person!
-    var me: Person!
+    
+    var robb: Person!
+    var arya: Person!
     
     var groupPersons: Set<Person>!
     var arrayPersons: Array<Person>!
@@ -21,11 +21,10 @@ class PersonTest: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
-        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
+        starkHouse = Repository.local.house(named: "Stark")
         
-        ned = Person(name: "Eddard", alias: "Ned", house: starkHouse)
-        me = Person(name: "Franc", alias: "fcallau", house: starkHouse)
+        robb = starkHouse.getPerson(named: "Robb")
+        arya = starkHouse.getPerson(named: "Arya")
         
         groupPersons = Set.init()
         arrayPersons = Array.init()
@@ -36,50 +35,49 @@ class PersonTest: XCTestCase {
     }
     
     func testPersonExistence() {
-        XCTAssertNotNil(ned)
+        XCTAssertNotNil(robb)
     }
     
     func testFullName() {
-        XCTAssertNotNil(ned.fullName)
-        XCTAssertEqual(ned.fullName, "Eddard Stark")
+        XCTAssertNotNil(robb.fullName)
+        XCTAssertEqual(robb.fullName, "Robb Stark")
     }
     
     func testEqualPersons() {
-        XCTAssertEqual(ned, ned)
+        XCTAssertEqual(robb, robb)
         
-        XCTAssertNotEqual(ned, me)
+        XCTAssertNotEqual(robb, arya)
     }
     
     func testComparePersons() {
-        XCTAssertLessThan(ned, me)
+        XCTAssertLessThan(arya, robb)
         
-        XCTAssertGreaterThan(me, ned)
+        XCTAssertGreaterThan(robb, arya)
     }
     
     func testAddPersonToSet() {
         XCTAssertEqual(groupPersons.count, 0)
-        groupPersons.insert(ned)
+        groupPersons.insert(robb)
         
         XCTAssertEqual(groupPersons.count, 1)
-        groupPersons.insert(me)
+        groupPersons.insert(arya)
         
         XCTAssertEqual(groupPersons.count, 2)
-        groupPersons.insert(ned)
+        groupPersons.insert(robb)
         
         XCTAssertEqual(groupPersons.count, 2)
     }
     
     func testAddPersonToArray() {
         XCTAssertEqual(arrayPersons.count, 0)
-        arrayPersons.append(ned)
+        arrayPersons.append(robb)
         
         XCTAssertEqual(arrayPersons.count, 1)
-        arrayPersons.append(me)
+        arrayPersons.append(arya)
         
         XCTAssertEqual(arrayPersons.count, 2)
-        arrayPersons.append(ned)
+        arrayPersons.append(robb)
         
         XCTAssertEqual(arrayPersons.count, 3)
     }
-    
 }

@@ -44,11 +44,15 @@ extension House {
     }
     
     func add(person: Person) {
-        guard person.house == self else { // Intentar implementar Equatable
-        // guard person.house.name == name else {
+        guard person.house == self else {
             return
         }
+        
         _members.insert(person)
+    }
+    
+    func getPerson(named: String) -> Person? {
+        return (_members.filter { $0.name == named ? true : false }).first
     }
 }
 
