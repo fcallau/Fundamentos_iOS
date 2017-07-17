@@ -49,11 +49,11 @@ class RepositoryTests: XCTestCase {
     
     func testFilteredBy() {
         func moreThan2PersonsInHouse(_ house: House) -> Bool {
-            return (house.count > 2 ? true : false)
+            return house.count > 2
         }
         
         func lessThan3PersonsInHouse(_ house: House) -> Bool {
-            return (house.count < 3 ? true : false)
+            return house.count < 3
         }
         
         XCTAssertEqual(Repository.local.houses(filteredBy: moreThan2PersonsInHouse).count, 1)
