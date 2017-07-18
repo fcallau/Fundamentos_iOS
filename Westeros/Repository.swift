@@ -25,18 +25,33 @@ final class LocalFactory : HouseFactory {
             // Aquí es donde te creas tus casas
             let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
             let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant Lion")
-            let targaryenSigil = Sigil(image: #imageLiteral(resourceName: "targaryen.jpg"), description: "Fire and Blood")
+            let targaryenSigil = Sigil(image: #imageLiteral(resourceName: "targaryen.jpg"), description: "Three headed dragon")
             
-            let stark = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
-            let lannister = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
-            let targaryen = House(name: "Targaryen", sigil: targaryenSigil, words: "Some words")
+            let starkURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")!
+            let lannisterURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Lannister")!
+            let targaryenURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Targaryen")!
+            
+            let stark = House(name: "Stark",
+                              sigil: starkSigil,
+                              words: "Winter is coming!",
+                              url: starkURL)
+            let lannister = House(name: "Lannister",
+                                  sigil: lannisterSigil,
+                                  words: "Hear me roar!",
+                                  url: lannisterURL)
+            let targaryen = House(name: "Targaryen",
+                                  sigil: targaryenSigil,
+                                  words: "Fire & Blood",
+                                  url: targaryenURL)
             
             let robb = Person(name: "Robb", alias: "The young wolf", house: stark)
             let arya = Person(name: "Arya", house: stark)
+            
             let tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannister)
             let cersei = Person(name: "Cersei", house: lannister)
             let jaime = Person(name: "Jaime", alias: "KingSlayer", house: lannister)
-            let daenerys  = Person(name: "Daenerys", alias: "Dragonmother", house: targaryen)
+            
+            let daenerys  = Person(name: "Daenerys", alias: "Mother of dragons", house: targaryen)
             let viserys  = Person(name: "Viserys", alias: "The Beggar King", house: targaryen)
             
             // Añadir los personajes a las casas
@@ -55,10 +70,11 @@ final class LocalFactory : HouseFactory {
     }
     
     func house(named: String) -> House? {
-        return houses.first { $0.name == named }
+        return houses.first { $0.name.uppercased() == named.uppercased() }
     }
     
     func houses(filteredBy: (House) -> Bool) -> [House] {
-        return (houses.filter { filteredBy($0) })
+        return Repository.local.houses.filter(filteredBy)
+        // return (Repository.local.houses.filter { filteredBy($0) })
     }
 }

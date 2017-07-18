@@ -19,10 +19,11 @@ final class House {
     let name: String
     let sigil: Sigil
     let words: Words
+    let wikiURL: URL
     private var _members: Members
     
-    init(name: String, sigil: Sigil, words: Words) {
-        (self.name, self.sigil, self.words) = (name, sigil, words)
+    init(name: String, sigil: Sigil, words: Words, url: URL) {
+        (self.name, self.sigil, self.words, self.wikiURL) = (name, sigil, words, url)
         _members = Members()
     }
 }
@@ -51,8 +52,24 @@ extension House {
         _members.insert(person)
     }
     
+    // Variadic version (ejemplo de uso: stark.add(persons: robb, arya))
+    func add(persons: Person...){
+        for person in persons{
+            add(person: person)
+        }
+    }
+    
     func getPerson(named: String) -> Person? {
-        return (_members.filter { $0.name == named ? true : false }).first
+        return (_members.filter { $0.name == named }).first
+    }
+    
+    // Sorted [Person]
+    func sortedMembers() -> [Person] {
+        // let memberArray: [Person] = Array(_members)
+        
+        return _members.sorted() // Propone Fernando
+        
+        // return memberArray.sorted()
     }
 }
 

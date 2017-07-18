@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1D2B341F1D4A27000E56E4 /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1D2B321F1D4A27000E56E4 /* WikiViewController.swift */; };
+		0F1D2B351F1D4A27000E56E4 /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1D2B331F1D4A27000E56E4 /* WikiViewController.xib */; };
 		0F4646281F1B884F00B5AC9E /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFC5E51F0EC23C0021F48D /* House.swift */; };
 		0F4646291F1B886000B5AC9E /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFC5E51F0EC23C0021F48D /* House.swift */; };
 		0F46462A1F1B887C00B5AC9E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4B9461F1438B60056E607 /* Person.swift */; };
@@ -22,6 +24,8 @@
 		0F7FCE2D1F18FB1600ADDD1D /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7FCE2C1F18FB1600ADDD1D /* RepositoryTests.swift */; };
 		0F7FCE2F1F18FCBB00ADDD1D /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7FCE2E1F18FCBB00ADDD1D /* Repository.swift */; };
 		0FB4B9471F1438B60056E607 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB4B9461F1438B60056E607 /* Person.swift */; };
+		0FC241BC1F1E4E260014300C /* HousesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC241BA1F1E4E260014300C /* HousesViewController.swift */; };
+		0FC241BD1F1E4E260014300C /* HousesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC241BB1F1E4E260014300C /* HousesViewController.xib */; };
 		0FC3EDAF1F0ECAA9007BA45A /* PersonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC3EDAE1F0ECAA9007BA45A /* PersonTest.swift */; };
 		0FCBF1C71F1A967300B97A25 /* HouseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBF1C61F1A967300B97A25 /* HouseTests.swift */; };
 		0FFFC5EA1F0EC8750021F48D /* lannister.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FFFC5E81F0EC8750021F48D /* lannister.jpg */; };
@@ -39,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F1D2B321F1D4A27000E56E4 /* WikiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
+		0F1D2B331F1D4A27000E56E4 /* WikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
 		0F4646301F1BAA0300B5AC9E /* targaryen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = targaryen.jpg; sourceTree = "<group>"; };
 		0F5349291F141292007313AA /* HouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
 		0F53492A1F141292007313AA /* HouseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HouseViewController.xib; sourceTree = "<group>"; };
@@ -53,6 +59,8 @@
 		0F7FCE2C1F18FB1600ADDD1D /* RepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		0F7FCE2E1F18FCBB00ADDD1D /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		0FB4B9461F1438B60056E607 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		0FC241BA1F1E4E260014300C /* HousesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousesViewController.swift; sourceTree = "<group>"; };
+		0FC241BB1F1E4E260014300C /* HousesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HousesViewController.xib; sourceTree = "<group>"; };
 		0FC3EDAE1F0ECAA9007BA45A /* PersonTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTest.swift; sourceTree = "<group>"; };
 		0FCBF1C61F1A967300B97A25 /* HouseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseTests.swift; sourceTree = "<group>"; };
 		0FFFC5E51F0EC23C0021F48D /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
@@ -83,6 +91,10 @@
 			children = (
 				0F5349291F141292007313AA /* HouseViewController.swift */,
 				0F53492A1F141292007313AA /* HouseViewController.xib */,
+				0F1D2B321F1D4A27000E56E4 /* WikiViewController.swift */,
+				0F1D2B331F1D4A27000E56E4 /* WikiViewController.xib */,
+				0FC241BA1F1E4E260014300C /* HousesViewController.swift */,
+				0FC241BB1F1E4E260014300C /* HousesViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -246,11 +258,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FFFC5EA1F0EC8750021F48D /* lannister.jpg in Resources */,
+				0F1D2B351F1D4A27000E56E4 /* WikiViewController.xib in Resources */,
 				0F4646311F1BAA0300B5AC9E /* targaryen.jpg in Resources */,
 				0F656D681F0C483000CCD549 /* LaunchScreen.storyboard in Resources */,
 				0F53492C1F141292007313AA /* HouseViewController.xib in Resources */,
 				0F656D651F0C483000CCD549 /* Assets.xcassets in Resources */,
 				0FFFC5EB1F0EC8750021F48D /* codeIsComing.png in Resources */,
+				0FC241BD1F1E4E260014300C /* HousesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,10 +284,12 @@
 			files = (
 				0FB4B9471F1438B60056E607 /* Person.swift in Sources */,
 				0F656D5E1F0C483000CCD549 /* AppDelegate.swift in Sources */,
+				0FC241BC1F1E4E260014300C /* HousesViewController.swift in Sources */,
 				0F53492B1F141292007313AA /* HouseViewController.swift in Sources */,
 				0F7FCE2B1F18F81B00ADDD1D /* UIKitExtensions.swift in Sources */,
 				0F4646281F1B884F00B5AC9E /* House.swift in Sources */,
 				0F7FCE2F1F18FCBB00ADDD1D /* Repository.swift in Sources */,
+				0F1D2B341F1D4A27000E56E4 /* WikiViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
