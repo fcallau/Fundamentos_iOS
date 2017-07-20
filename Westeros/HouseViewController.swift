@@ -53,11 +53,16 @@ class HouseViewController: UIViewController {
     }
     
     @objc func displayPersons() {
-        // Creamos un personsVC
-        let personsVC = HousesViewController(model: model.sortedMembers())
+        // Creamos el controlador
+        let dataSource = DataSources.personDataSource(model: model.sortedMembers())
+        let delegate = Delegates.personsDelegate(model: model.sortedMembers())
+        let personsVC = ArrayTableViewController(dataSource: dataSource,
+                                                delegate: delegate,
+                                                title: "Persons",
+                                                style: .plain)
         
-        // Lo cargamos en el navigation
         navigationController?.pushViewController(personsVC, animated: true)
+
     }
     
     override func viewDidLoad() {

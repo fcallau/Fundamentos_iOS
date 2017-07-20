@@ -34,11 +34,6 @@ class HousesViewController<T>: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // ¿Sería necesario crear un cellID para cada uno de los posibles <T>?
-        // ¿Sería necesario crear un cellID para cada uno de los posibles <T>?
-        // ¿Sería necesario crear un cellID para cada uno de los posibles <T>?
-        // ¿Sería necesario crear un cellID para cada uno de los posibles <T>?
-        // ¿Sería necesario crear un cellID para cada uno de los posibles <T>?
         var cellID: String
         
         if (T.self == House.self) {
@@ -72,6 +67,7 @@ class HousesViewController<T>: UITableViewController {
     // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Cuando se selecciona una celda, en el caso de las personas, debe ignorar el evento
         if (T.self == House.self) {
             let houseVC = HouseViewController(model: model[indexPath.row] as! House)
             
