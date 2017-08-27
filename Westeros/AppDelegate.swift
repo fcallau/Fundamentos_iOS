@@ -9,11 +9,9 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -24,17 +22,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Creamos unos modelos
         let houses = Repository.local.houses
+        let seasons = Repository.local.seasons
         
         // Creamos el controlador
-        let dataSource = DataSources.houseDataSource(model: houses)
-        let delegate = Delegates.housesDelegate(model: houses)
-        let housesVC = ArrayTableViewController(dataSource: dataSource,
-                                                delegate: delegate,
-                                                title: "Westeros",
+        let houseDataSource = DataSources.housesDataSource(model: houses)
+        let houseDelegate = Delegates.housesDelegate(model: houses)
+        let housesVC = ArrayTableViewController(dataSource: houseDataSource,
+                                                delegate: houseDelegate,
+                                                title: "Houses",
                                                 style: .plain).wrappedInNavigation()
         
+        housesVC.tabBarItem = UITabBarItem(title: "Houses", image: UIImage.init(named: "littleHouses.png"), selectedImage: nil)
+        
+        let seasonDataSource = DataSources.seasonsDataSource(model: seasons)
+        let seasonDelegate = Delegates.seasonsDelegate(model: seasons)
+        let seasonsVC = ArrayTableViewController(dataSource: seasonDataSource,
+                                                 delegate: seasonDelegate,
+                                                 title: "Seasons",
+                                                 style: .plain).wrappedInNavigation()
+        
+        seasonsVC.tabBarItem = UITabBarItem(title: "Seasons", image: UIImage.init(named: "littleSeasons.png"), selectedImage: nil)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.delegate = self as UITabBarControllerDelegate
+        tabBarController.viewControllers = [housesVC, seasonsVC]
+        
         // Asignamos el RootVC
-        window?.rootViewController = housesVC
+        // window?.rootViewController = housesVC
+        // window?.rootViewController = seasonsVC
+        window?.rootViewController = tabBarController
         
         return true
     }
@@ -60,7 +76,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    
+    // MARK: - UITabBarControllerDelegate
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        (viewController as! UINavigationController).popToRootViewController(animated: false)
+    }
 }
 

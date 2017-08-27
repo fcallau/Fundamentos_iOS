@@ -13,7 +13,7 @@ final class ArrayTableViewDelegate<Element>: NSObject, UITableViewDelegate {
     typealias giveMeTheController = (Int) -> (UIViewController)
     
     let model: Elements
-    private var _delegateFromController: UIViewController?
+    private weak var _delegateFromController: UIViewController?
     private let _controller: giveMeTheController?
     
     init(model: Elements, controllerCreator: giveMeTheController?) {
@@ -35,4 +35,3 @@ final class ArrayTableViewDelegate<Element>: NSObject, UITableViewDelegate {
         _delegateFromController = controller
     }
 }
- 

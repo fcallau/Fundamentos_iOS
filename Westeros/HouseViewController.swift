@@ -35,13 +35,14 @@ class HouseViewController: UIViewController {
                                    target: self,
                                    action: #selector(displayWiki))
         
-        let persons = UIBarButtonItem(title: "Persons",
+        let members = UIBarButtonItem(title: "Members",
                                       style: .plain,
                                       target: self,
-                                      action: #selector(displayPersons))
+                                      action: #selector(displayMembers))
         
         // Añadimos
-        navigationItem.rightBarButtonItems = [wiki, persons]
+        // navigationItem.rightBarButtonItems = [wiki, members]
+        navigationItem.rightBarButtonItems = [members, wiki]
     }
     
     @objc func displayWiki() {
@@ -52,16 +53,16 @@ class HouseViewController: UIViewController {
         navigationController?.pushViewController(wikiVC, animated: true)
     }
     
-    @objc func displayPersons() {
+    @objc func displayMembers() {
         // Creamos el controlador
-        let dataSource = DataSources.personDataSource(model: model.sortedMembers())
-        let delegate = Delegates.personsDelegate(model: model.sortedMembers())
-        let personsVC = ArrayTableViewController(dataSource: dataSource,
-                                                delegate: delegate,
-                                                title: "Persons",
-                                                style: .plain)
+        let dataSource = DataSources.membersDataSource(model: model.sortedMembers())
+        let delegate = Delegates.membersDelegate(model: model.sortedMembers())
+        let membersVC = ArrayTableViewController(dataSource: dataSource,
+                                                 delegate: delegate,
+                                                 title: "Members",
+                                                 style: .plain)
         
-        navigationController?.pushViewController(personsVC, animated: true)
+        navigationController?.pushViewController(membersVC, animated: true)
 
     }
     
